@@ -4,10 +4,10 @@ const mysqlt = require("mysql2");
 
 
 const connection = mysqlt.createConnection({
-  host: 'localhost',
-  user: 'user1',
-  password: '1234',
-  database: 'shopping_cart'
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.password,
+  database: config.mysql.database
 });
 
 connection.connect(err => {
