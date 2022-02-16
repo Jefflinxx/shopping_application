@@ -10,7 +10,7 @@
 
 ## 專案結構
 
-使用 express-generator 初始化專案，在 MVC 架構下進行開發
+使用 express-generator 初始化專案
 使用 MySQL 建立資料庫
 stateless authentication
 
