@@ -3,3 +3,6 @@
 
 # Dependency directories
 node_modules/
+
+#之後要做前端，所以這邊就不用了
+views/
