@@ -10,9 +10,9 @@
 
 ## 專案結構
 
-使用 express-generator 初始化專案
-使用 MySQL 建立資料庫
-stateless authentication
+- 使用 express-generator 初始化專案
+- 使用 MySQL 建立資料庫
+- stateless authentication
 
 ---
 
