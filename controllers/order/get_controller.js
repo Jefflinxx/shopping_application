@@ -9,6 +9,7 @@ check = new Check();
 module.exports = class GetOrder {
     // 取得全部訂單資料
     getAllOrder(req, res, next) {
+        //看前端怎麼丟
         const token = req.headers['token'];
         //確定token是否有輸入
         if (check.checkNull(token) === true) {
@@ -40,6 +41,7 @@ module.exports = class GetOrder {
     }
    // 取得單筆產品資料
 getOneOrder(req, res, next) {
+    //看前端怎麼丟
     const token = req.headers['token'];
     //確定token是否有輸入
     if (check.checkNull(token) === true) {

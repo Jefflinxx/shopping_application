@@ -8,10 +8,12 @@ const verify = require('../../models/member/verification');
 const updateAction = require('../../models/member/update_model');
 
 
-//為何這裡要這樣
 check = new Check();
 
 module.exports = class Member {
+    // getRegister(req,res,next) {
+    //     res.render('register', { user:req.user });
+    // }
     postRegister(req, res, next) {
 
         //進行加密
@@ -50,6 +52,9 @@ module.exports = class Member {
             })
         }
     }
+    // getLogin(req,res){
+    //     res.render("login", { user:req.user }); 
+    // }
     postLogin(req,res,next) {
 
         //進行加密
@@ -78,7 +83,8 @@ module.exports = class Member {
                     exp: Math.floor(Date.now() / 1000) + (60 * 60), // token一個小時後過期。
                     data: rows[0].id
                 }, config.secret);
-                res.setHeader('token', token);
+                  //這邊就先把token send過去，到時候前端在存localstorage
+                res.send({ sucess:true,token:token,user:rows });
                 res.json({
                     result: {
                         status: "登入成功。",
@@ -88,7 +94,11 @@ module.exports = class Member {
             }
         })
     } 
+    // getUpdate(req,res) {
+    //     res.render('/update',{ user:req.user });
+    // }
     putUpdate(req, res, next) {
+        
         const token = req.headers['token'];
         //確定token是否有輸入
         if (check.checkNull(token) === true) {
